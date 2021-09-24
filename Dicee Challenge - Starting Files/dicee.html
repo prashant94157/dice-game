@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="result">Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="images/dice6.png" />
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="images/dice6.png" />
+      </div>
+    </div>
+
+    <footer>www 🎲 Dice Game 🎲 com</footer>
+    <script type="text/javascript">
+      var a = Math.random() * 6;
+      a = Math.floor(a) + 1;
+      var b = Math.random() * 6;
+      b = Math.floor(b) + 1;
+      document
+        .getElementsByClassName('img1')[0]
+        .setAttribute('src', 'images/dice' + a + '.png');
+      document
+        .getElementsByClassName('img2')[0]
+        .setAttribute('src', 'images/dice' + b + '.png');
+      // console.log(document.getElementsByClassName('img1')[0].getAttribute.src);
+      var r = document.getElementById('result');
+      if (a === b) r.innerHTML = 'Ties!!';
+      else if (a > b) r.innerHTML = 'Player 1 wins!!';
+      else r.innerHTML = 'Player 2 wins!!';
+      // console.log(document.getElementById('result').innerHTML);
+    </script>
+  </body>
+</html>
